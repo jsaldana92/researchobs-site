@@ -23,4 +23,5 @@ dist-ssr
 *.sln
 *.sw?
 
-src/images/
+src/assets
+docs/
