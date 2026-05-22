@@ -63,7 +63,7 @@ export const Card = forwardRef(({ customClass, ...rest }, ref) => (
   <div
     ref={ref}
     {...rest}
-    className={`pointer-events-none absolute top-1/2 left-1/2 overflow-hidden rounded-[1.15rem] bg-[#111614] p-[12px] shadow-[0_24px_70px_rgba(0,0,0,0.34),inset_0_2px_0_rgba(255,255,255,0.14),inset_0_-10px_22px_rgba(0,0,0,0.38)] [transform-style:preserve-3d] [will-change:transform] [backface-visibility:hidden] ${
+    className={`pointer-events-none absolute top-1/2 left-1/2 overflow-hidden rounded-[1.15rem] bg-[#111614] p-3 shadow-[0_24px_70px_rgba(0,0,0,0.34),inset_0_2px_0_rgba(255,255,255,0.14),inset_0_-10px_22px_rgba(0,0,0,0.38)] transform-3d will-change-transformbbackface-hidden{
       customClass ?? ""
     } ${rest.className ?? ""}`.trim()}
   />
@@ -310,7 +310,7 @@ function CardSwap({
   return (
     <div
       ref={containerRef}
-      className="pointer-events-auto absolute bottom-[-170px] right-[2.25rem] origin-bottom-right transform overflow-visible perspective-[1200px] max-[1024px]:right-[1rem] max-[768px]:top-24 max-[768px]:right-1/2 max-[768px]:bottom-auto max-[768px]:origin-top max-[768px]:translate-x-1/2 max-[768px]:scale-[0.92] max-[480px]:scale-[0.78]"
+      className="pointer-events-auto absolute -bottom-42.5 right-9 origin-bottom-right transform overflow-visible perspective-distant max-[1024px]:right-4 max-[768px]:top-24 max-[768px]:right-1/2 max-[768px]:bottom-auto max-[768px]:origin-top max-[768px]:translate-x-1/2 max-[768px]:scale-[0.92] max-[480px]:scale-[0.78]"
       style={{ width, height }}
     >
       {rendered}
@@ -320,7 +320,7 @@ function CardSwap({
 
 function FeatureCardContent({ feature }) {
   return (
-    <div className="relative h-full w-full overflow-hidden rounded-[0.75rem] bg-slate-950">
+    <div className="relative h-full w-full overflow-hidden rounded-xl bg-slate-950">
       {feature.imageSrc ? (
         <img
           src={feature.imageSrc}
@@ -334,7 +334,7 @@ function FeatureCardContent({ feature }) {
         />
       ) : (
         <div
-          className={`absolute inset-0 h-full w-full bg-gradient-to-br ${feature.accentClass}`}
+          className={`absolute inset-0 h-full w-full bg-linear-to-br ${feature.accentClass}`}
         >
           <div className="flex h-full w-full flex-col bg-slate-950/18 p-6">
             <p className="text-xs font-semibold uppercase tracking-[0.28em] text-slate-100/80">
@@ -361,14 +361,14 @@ function FeatureCardContent({ feature }) {
         </div>
       )}
 
-      <div className="pointer-events-none absolute inset-0 rounded-[0.75rem] shadow-[inset_0_0_0_1px_rgba(255,255,255,0.16),inset_0_16px_24px_rgba(255,255,255,0.06),inset_0_-18px_28px_rgba(0,0,0,0.24)]" />
+      <div className="pointer-events-none absolute inset-0 rounded-xl shadow-[inset_0_0_0_1px_rgba(255,255,255,0.16),inset_0_16px_24px_rgba(255,255,255,0.06),inset_0_-18px_28px_rgba(0,0,0,0.24)]" />
     </div>
   );
 }
 
 function FeatureMediaStage({ features, onActiveIndexChange }) {
   return (
-    <div className="relative z-0 h-[280px]  sm:h-[320px] md:h-[360px] lg:h-[560px] lg:overflow-visible">
+    <div className="relative z-0 h-[280px]h-[320px] md:h-90 lg:h-140 lg:overflow-visible">
       <CardSwap
         width={355}
         height={540}
@@ -403,7 +403,7 @@ export default function CoreFeaturesSection() {
   }, []);
 
   return (
-    <section className="overflow-hidden bg-gradient-to-br from-[#b7c8ba] via-[#e8ece5] to-[#f6f2e8] px-6 pt-16 pb-0 text-slate-900 sm:pt-20">
+    <section className="overflow-hidden bg-linear-to-br from-[#b7c8ba] via-[#e8ece5] to-[#f6f2e8] px-6 pt-10 pb-0 text-slate-900 m:pt-10 sm:pt-10">
       <div className="mx-auto grid max-w-6xl gap-3 sm:gap-18 lg:grid-cols-2 lg:items-center lg:gap-10">
         <div className="relative z-20 flex flex-col justify-center pb-4 lg:pb-20">
           <p className="text-xs font-semibold uppercase tracking-[0.28em] text-emerald-950/65">

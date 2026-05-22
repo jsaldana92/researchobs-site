@@ -133,7 +133,7 @@ export default function Navbar() {
         className={`transition-all duration-300 ${
           isScrolled || isMobileMenuOpen
             ? "bg-slate-950/80 backdrop-blur-md"
-            : "bg-gradient-to-b from-slate-950/55 via-slate-950/25 to-slate-950/0"
+            : "bg-linear-to-b from-slate-950/55 via-slate-950/25 to-slate-950/0"
         }`}
       >
         <div className="mx-auto flex max-w-6xl items-center gap-3 px-4 py-3 sm:gap-4 sm:px-6 sm:py-4">
