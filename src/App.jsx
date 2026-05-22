@@ -1,6 +1,12 @@
+// src/App.jsx
+
 import { Route, Routes } from "react-router";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
+import Features from "./pages/Features";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import DeleteAccount from "./pages/DeleteAccount";
+import TermsAndConditions from "./pages/TermsAndConditions";
 
 function PlaceholderPage({ title, text }) {
   return (
@@ -22,15 +28,10 @@ export default function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route
-          path="/features"
-          element={
-            <PlaceholderPage
-              title="Features"
-              text="This page can stay simple for now while we focus on the homepage."
-            />
-          }
-        />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms-conditions" element={<TermsAndConditions />} />
+        <Route path="/delete-account" element={<DeleteAccount />} />
+        <Route path="/features" element={<Features />} />
         <Route
           path="/about"
           element={

@@ -1,6 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
 import AppLogo from "../components/AppLogo";
-import CoreFeaturesSection from "../components/CoreFeaturesSection";
+import HomeAboutResearchObs from "../HomeComponents/HomeAboutResearchObs";
+import HomePipeline from "../HomeComponents/HomePipeline";
+import HomeFAQ from "../HomeComponents/HomeFAQ";
 
 const DISPLAY_MS = 8000;
 const FADE_MS = 1800;
@@ -269,7 +271,7 @@ export default function Home() {
           {incomingSlide ? (
             <HeroImage
               slide={incomingSlide}
-              className={`absolute inset-0 block h-full w-full transition-opacity duration-[1800ms] ease-linear ${
+              className={`absolute inset-0 block h-full w-full transition-opacity duration-1800 ease-linear ${
                 incomingVisible ? "opacity-100" : "opacity-0"
               }`}
             />
@@ -285,10 +287,7 @@ export default function Home() {
             <span className="mx-2 text-emerald-300">•</span> Report
           </p>
 
-          <AppLogo
-            className="h-[5rem] w-auto sm:h-[7rem] md:h-[8.5rem]"
-            priority={true}
-          />
+          <AppLogo className="h-20 w-auto sm:h-28 md:h-34" priority={true} />
 
           <p className="mt-3 max-w-3xl px-4 text-base font-medium text-slate-200 sm:text-lg md:text-xl">
             A free, intuitive Android app for behavioral research and welfare
@@ -305,7 +304,9 @@ export default function Home() {
         </div>
       </section>
 
-      <CoreFeaturesSection />
+      <HomeAboutResearchObs />
+      <HomePipeline />
+      <HomeFAQ />
       <StoreLinksPlaceholder />
     </>
   );
