@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ResearchObs Account Deletion</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        --green: #5f7659;
+        --dark-1: #071b1d;
+        --dark-2: #102820;
+        --dark-3: #3f5138;
+        --paper: #f8f7f3;
+        --text: #111827;
+        --muted: #4b5563;
+        --border: #cfd8cc;
+        --error-bg: #fef2f2;
+        --error-border: #fecaca;
+        --error-text: #991b1b;
+        --success-bg: #f0fdf4;
+        --success-border: #bbf7d0;
+        --success-text: #166534;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: Arial, Helvetica, sans-serif;
+        background: linear-gradient(
+          135deg,
+          var(--dark-1),
+          var(--dark-2),
+          var(--dark-3)
+        );
+        color: #ffffff;
+      }
+
+      main {
+        min-height: 100vh;
+        padding: 72px 20px;
+      }
+
+      .shell {
+        width: min(100%, 920px);
+        margin: 0 auto;
+      }
+
+      .header {
+        text-align: center;
+        margin-bottom: 42px;
+      }
+
+      .eyebrow {
+        margin: 0;
+        color: #b8c9b4;
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin: 16px 0 0;
+        font-size: clamp(36px, 7vw, 64px);
+        line-height: 0.95;
+        letter-spacing: -0.05em;
+      }
+
+      .intro {
+        max-width: 760px;
+        margin: 20px auto 0;
+        color: rgba(255, 255, 255, 0.78);
+        font-size: 17px;
+        line-height: 1.7;
+      }
+
+      .card {
+        background: var(--paper);
+        color: var(--text);
+        border: 1px solid rgba(255, 255, 255, 0.35);
+        padding: clamp(24px, 4vw, 36px);
+        box-shadow: 0 28px 90px rgba(0, 0, 0, 0.34);
+      }
+
+      form {
+        display: grid;
+        gap: 22px;
+      }
+
+      .grid {
+        display: grid;
+        gap: 18px;
+      }
+
+      @media (min-width: 720px) {
+        .grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      label {
+        display: block;
+        font-size: 14px;
+        font-weight: 900;
+      }
+
+      input,
+      select,
+      textarea {
+        width: 100%;
+        margin-top: 8px;
+        border: 1px solid var(--border);
+        border-radius: 0;
+        background: #ffffff;
+        color: var(--text);
+        font: inherit;
+        font-size: 14px;
+        padding: 13px 14px;
+        outline: none;
+      }
+
+      input:focus,
+      select:focus,
+      textarea:focus {
+        border-color: var(--green);
+        box-shadow: 0 0 0 3px rgba(95, 118, 89, 0.18);
+      }
+
+      textarea {
+        min-height: 150px;
+        resize: vertical;
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      .notice {
+        border: 1px solid var(--border);
+        background: #ffffff;
+        color: var(--muted);
+        padding: 16px;
+        line-height: 1.6;
+        font-size: 14px;
+      }
+
+      .message {
+        display: none;
+        padding: 16px;
+        font-weight: 800;
+        line-height: 1.5;
+      }
+
+      .message.error {
+        display: block;
+        border: 1px solid var(--error-border);
+        background: var(--error-bg);
+        color: var(--error-text);
+      }
+
+      .message.success {
+        display: block;
+        border: 1px solid var(--success-border);
+        background: var(--success-bg);
+        color: var(--success-text);
+      }
+
+      button {
+        border: 0;
+        background: var(--green);
+        color: #ffffff;
+        cursor: pointer;
+        padding: 16px 20px;
+        font-size: 16px;
+        font-weight: 900;
+        transition:
+          opacity 160ms ease,
+          background 160ms ease;
+      }
+
+      button:hover {
+        background: #4f654b;
+      }
+
+      button:disabled {
+        cursor: not-allowed;
+        opacity: 0.62;
+      }
+
+      a {
+        color: #29423b;
+        font-weight: 900;
+      }
+
+      .footer {
+        margin-top: 22px;
+        color: rgba(255, 255, 255, 0.74);
+        font-size: 14px;
+        line-height: 1.6;
+        text-align: center;
+      }
+
+      .footer a {
+        color: #d9ecd4;
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <section class="shell">
+        <div class="header">
+          <p class="eyebrow">Account Deletion</p>
+
+          <h1>Request deletion of your ResearchObs account</h1>
+
+          <p class="intro">
+            Use this form if you cannot access the in-app account deletion
+            option. Submitting this request does not immediately delete your
+            account. ResearchObs will email the address you provide and ask you
+            to reply from that email account before the deletion request is
+            processed.
+          </p>
+        </div>
+
+        <div class="card">
+          <form id="deleteAccountForm">
+            <input
+              id="website"
+              class="hidden"
+              type="text"
+              name="website"
+              autocomplete="off"
+              tabindex="-1"
+              aria-hidden="true"
+            />
+
+            <div class="grid">
+              <label>
+                First name
+                <input
+                  id="firstName"
+                  type="text"
+                  autocomplete="given-name"
+                  maxlength="120"
+                  required
+                />
+              </label>
+
+              <label>
+                Last name
+                <input
+                  id="lastName"
+                  type="text"
+                  autocomplete="family-name"
+                  maxlength="120"
+                  required
+                />
+              </label>
+            </div>
+
+            <label>
+              Email used for your ResearchObs account
+              <input
+                id="email"
+                type="email"
+                autocomplete="email"
+                maxlength="254"
+                required
+              />
+            </label>
+
+            <label>
+              Organization or institution, optional
+              <input id="institution" type="text" maxlength="180" />
+            </label>
+
+            <label>
+              Reason for leaving
+              <select id="reasonKey">
+                <option value="no_longer_need">No longer need the app.</option>
+                <option value="privacy_concerns">Privacy concerns.</option>
+                <option value="trouble_using_app">
+                  Trouble using the app.
+                </option>
+                <option value="moving_to_another_tool">
+                  Moving to another tool.
+                </option>
+                <option value="research_not_supported">
+                  App does not support my research.
+                </option>
+                <option value="other">Other</option>
+              </select>
+            </label>
+
+            <label>
+              Optional feedback
+              <textarea
+                id="otherText"
+                maxlength="1000"
+                placeholder="Add any optional feedback about your reason for leaving."
+              ></textarea>
+            </label>
+
+            <div class="notice">
+              After you submit this request, ResearchObs will send a
+              confirmation email to the account email address you provide. Your
+              account and associated account data will not be deleted until the
+              request is verified from that email address.
+            </div>
+
+            <div
+              id="message"
+              class="message"
+              role="status"
+              aria-live="polite"
+            ></div>
+
+            <button id="submitButton" type="submit">
+              Submit account deletion request
+            </button>
+          </form>
+        </div>
+
+        <p class="footer">
+          Questions? Contact
+          <a href="mailto:researchobsapp@gmail.com">researchobsapp@gmail.com</a
+          >. View the
+          <a href="/#/privacy-policy">ResearchObs Privacy Policy</a>.
+        </p>
+      </section>
+    </main>
+
+    <script>
+      const API_URL =
+        "https://z43m0ab92k.execute-api.us-east-1.amazonaws.com/public/account-deletion-requests";
+
+      const form = document.getElementById("deleteAccountForm");
+      const message = document.getElementById("message");
+      const submitButton = document.getElementById("submitButton");
+
+      function valueOf(id) {
+        return document.getElementById(id).value.trim();
+      }
+
+      function showMessage(type, text) {
+        message.className = `message ${type}`;
+        message.textContent = text;
+      }
+
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        submitButton.disabled = true;
+        submitButton.textContent = "Submitting request...";
+        message.className = "message";
+        message.textContent = "";
+
+        const payload = {
+          firstName: valueOf("firstName"),
+          lastName: valueOf("lastName"),
+          email: valueOf("email"),
+          institution: valueOf("institution"),
+          reasonKey: valueOf("reasonKey"),
+          otherText: valueOf("otherText"),
+
+          source: "/delete-account/",
+          sourcePage: "delete_account_static_page",
+          appSection: "account_deletion",
+          platform: "web",
+
+          website: valueOf("website"),
+        };
+
+        try {
+          const response = await fetch(API_URL, {
+            method: "POST",
+            headers: {
+              "content-type": "application/json",
+            },
+            body: JSON.stringify(payload),
+          });
+
+          let data = null;
+
+          try {
+            data = await response.json();
+          } catch {
+            data = null;
+          }
+
+          if (!response.ok) {
+            throw new Error(
+              data?.message ||
+                "Could not submit the account deletion request. Please try again.",
+            );
+          }
+
+          form.reset();
+          showMessage(
+            "success",
+            "Request submitted. Please check your email and reply to the confirmation message to verify the account deletion request.",
+          );
+        } catch (error) {
+          showMessage(
+            "error",
+            error instanceof Error
+              ? error.message
+              : "Could not submit the account deletion request. Please try again.",
+          );
+        } finally {
+          submitButton.disabled = false;
+          submitButton.textContent = "Submit account deletion request";
+        }
+      });
+    </script>
+  </body>
+</html>
