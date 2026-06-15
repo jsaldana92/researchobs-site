@@ -1,7 +1,7 @@
 // src/pages/PrivacyPolicy.jsx
 
 const intro =
-  "This Privacy Policy explains how ResearchObs handles account information, local data, app analytics, crash diagnostics, optional cloud features, and user-selected exports. You can access this Privacy Policy at any time in the app or at https://www.researchobs.com/#/privacy-policy.";
+  "This Privacy Policy explains how ResearchObs handles account information, local data, app analytics, crash diagnostics, optional cloud features, and user-selected exports. You can access this Privacy Policy at any time in the app or at https://www.researchobs.org/privacy-policy.";
 
 const sections = [
   {
@@ -66,7 +66,7 @@ const sections = [
   },
   {
     title: "16. Data Retention and Deletion",
-    body: "Local data remains on your device until you delete it, overwrite it, clear app storage, uninstall the app, restore from a backup, or otherwise remove it. Files uploaded to Google Drive, Dropbox, or other third-party services remain subject to those services and your account settings. ResearchObs Cloud account, profile, project, membership, and backend data may be retained as needed to provide services, maintain security, troubleshoot problems, comply with legal obligations, enforce terms, or support account and project features. You may request that your ResearchObs account and ResearchObs-controlled data be deleted at https://www.researchobs.com/#/delete-account. You may also contact ResearchObs with privacy-related requests.",
+    body: "Local data remains on your device until you delete it, overwrite it, clear app storage, uninstall the app, restore from a backup, or otherwise remove it. Files uploaded to Google Drive, Dropbox, or other third-party services remain subject to those services and your account settings. ResearchObs Cloud account, profile, project, membership, and backend data may be retained as needed to provide services, maintain security, troubleshoot problems, comply with legal obligations, enforce terms, or support account and project features. You may request that your ResearchObs account and ResearchObs-controlled data be deleted at https://www.researchobs.org/delete-account. You may also contact ResearchObs with privacy-related requests.",
   },
   {
     title: "17. Data Security",

@@ -2,11 +2,14 @@
 
 import { Route, Routes } from "react-router";
 import Navbar from "./components/Navbar";
+import ScrollToTop from "./components/ScrollToTop";
+import BottomBar from "./components/BottomBar";
 import Home from "./pages/Home";
 import Features from "./pages/Features";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import DeleteAccount from "./pages/DeleteAccount";
 import TermsAndConditions from "./pages/TermsAndConditions";
+import Contact from "./pages/Contact";
 
 function PlaceholderPage({ title, text }) {
   return (
@@ -25,6 +28,7 @@ export default function App() {
   return (
     <div className="min-h-screen bg-[#08110c] text-slate-100">
       <Navbar />
+      <ScrollToTop />
 
       <Routes>
         <Route path="/" element={<Home />} />
@@ -33,24 +37,12 @@ export default function App() {
         <Route path="/delete-account" element={<DeleteAccount />} />
         <Route path="/features" element={<Features />} />
         <Route
-          path="/about"
-          element={
-            <PlaceholderPage
-              title="About"
-              text="This page can stay simple for now while we focus on the homepage."
-            />
-          }
+          path="/tutorials"
+          element={<PlaceholderPage title="Tutorials" text="Coming soon!" />}
         />
-        <Route
-          path="/contact"
-          element={
-            <PlaceholderPage
-              title="Contact"
-              text="This page can stay simple for now while we focus on the homepage."
-            />
-          }
-        />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
+      <BottomBar />
     </div>
   );
 }

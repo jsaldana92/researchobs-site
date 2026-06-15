@@ -25,8 +25,8 @@ export async function submitAccountDeletionRequest({
     reasonKey: cleanString(reasonKey),
     otherText: cleanString(otherText),
 
-    source: "/delete-account",
-    sourcePage: "delete_account_page",
+    source: "/delete-account/",
+    sourcePage: "delete_account_static_page",
     appSection: "account_deletion",
     platform: "web",
 

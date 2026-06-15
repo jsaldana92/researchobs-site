@@ -325,6 +325,13 @@ export default function DeleteAccount() {
                   />
                 </label>
 
+                <div className="border border-[#cfd8cc] bg-white p-4 text-sm leading-7 text-slate-600">
+                  After you submit this request, ResearchObs will send a
+                  confirmation email to the account email address you provide.
+                  Your account and associated account data will not be deleted
+                  until the request is verified from that email address.
+                </div>
+
                 <FieldError>{errorMessage}</FieldError>
 
                 <button

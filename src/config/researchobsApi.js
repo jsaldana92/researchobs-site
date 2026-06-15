@@ -7,7 +7,7 @@ export const RESEARCHOBS_API_BASE_URL = rawApiBaseUrl.replace(/\/+$/, "");
 export function requireResearchObsApiBaseUrl() {
   if (!RESEARCHOBS_API_BASE_URL) {
     throw new Error(
-      "Missing VITE_RESEARCHOBS_API_BASE_URL. Add it to your local .env.local file before submitting account deletion requests.",
+      "Missing VITE_RESEARCHOBS_API_BASE_URL. Add it to your local .env.local file before submitting website requests.",
     );
   }
 

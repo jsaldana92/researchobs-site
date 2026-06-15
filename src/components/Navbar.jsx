@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { MotionConfig, motion } from "framer-motion";
 import { NavLink } from "react-router";
-import AppLogo from "./AppLogo";
+import animalLogo from "../assets/logo/animals_logo.png";
 
 const navLinkClass = ({ isActive }) =>
   `relative inline-flex items-center px-2 py-2 text-sm font-medium tracking-wide transition-colors ${
@@ -141,7 +141,11 @@ export default function Navbar() {
             to="/"
             className="flex shrink-0 items-center overflow-visible"
           >
-            <AppLogo className="h-10 w-auto origin-left scale-[1] object-contain sm:h-12 sm:scale-[1] md:h-14 md:scale-[1]" />
+            <img
+              src={animalLogo}
+              alt="ResearchObs"
+              className="h-10 w-auto origin-left scale-[1] object-contain sm:h-12 sm:scale-[1] md:h-14 md:scale-[1]"
+            />
           </NavLink>
 
           <div className="ml-auto flex min-w-0 items-center">
@@ -152,8 +156,8 @@ export default function Navbar() {
               <NavLink to="/features" className={navLinkClass}>
                 Features
               </NavLink>
-              <NavLink to="/about" className={navLinkClass}>
-                About
+              <NavLink to="/tutorials" className={navLinkClass}>
+                Tutorials
               </NavLink>
               <NavLink to="/contact" className={navLinkClass}>
                 Contact
@@ -184,11 +188,11 @@ export default function Navbar() {
                       Features
                     </NavLink>
                     <NavLink
-                      to="/about"
+                      to="/Tutorials"
                       className={navLinkClass}
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
-                      About
+                      Tutorials
                     </NavLink>
                     <NavLink
                       to="/contact"
