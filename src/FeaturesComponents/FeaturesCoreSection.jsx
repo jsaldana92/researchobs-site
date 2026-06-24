@@ -399,7 +399,7 @@ export default function CoreFeaturesSection() {
   }, []);
 
   return (
-    <section className="overflow-hidden bg-linear-to-br from-[#b7c8ba] via-[#e8ece5] to-[#f6f2e8] px-6 pt-10 pb-0 text-slate-900 sm:pt-10">
+    <section className="overflow-hidden bg-linear-to-br from-[#b7c8ba] via-[#e8ece5] to-[#f6f2e8] px-6 pt-10 pb-60 text-slate-900 sm:pt-10 md:pb-0 sm:pb-60">
       <div className="mx-auto grid max-w-6xl gap-3 sm:gap-18 lg:grid-cols-2 lg:items-center lg:gap-10">
         <div className="relative z-20 flex flex-col justify-center pb-4 lg:pb-20">
           <p className="text-xs font-semibold uppercase tracking-[0.28em] text-emerald-950/65">

@@ -9,6 +9,9 @@ import amazonAppstoreBadge from "../assets/app_store/amazon-appstore-badge.svg";
 const AMAZON_APPSTORE_URL =
   "https://www.amazon.com/ResearchObs/dp/B0H2XWMKH8/ref=sr_1_1?crid=J16WHGEZIFIZ&dib=eyJ2IjoiMSJ9.5zlvG0GddLW_bBTx2j92Lw.AwXdZ-uBmd8MLGCsFuMKNCMmZNdIuOl2VOwYP0KopCU&dib_tag=se&keywords=research+obs&qid=1781242516&s=mobile-apps&sprefix=researchobs%2Cmobile-apps%2C164&sr=1-1";
 
+const GOOGLE_PLAY_STORE_URL =
+  "https://play.google.com/store/apps/details?id=com.researchobs.app";
+
 const DISPLAY_MS = 8000;
 const FADE_MS = 1800;
 const HERO_SIZES = "100vw";
@@ -131,7 +134,6 @@ export default function Home() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [incomingIndex, setIncomingIndex] = useState(null);
   const [incomingVisible, setIncomingVisible] = useState(false);
-  const [showBetaModal, setShowBetaModal] = useState(false);
   useEffect(() => {
     if (slides.length <= 1 || incomingIndex !== null) return undefined;
 
@@ -256,9 +258,10 @@ export default function Home() {
             </p>
 
             <div className="mt-4 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <button
-                type="button"
-                onClick={() => setShowBetaModal(true)}
+              <a
+                href={GOOGLE_PLAY_STORE_URL}
+                target="_blank"
+                rel="noreferrer"
                 aria-label="Get ResearchObs on Google Play"
                 className="transition duration-300 hover:-translate-y-0.5 hover:opacity-90"
               >
@@ -269,7 +272,7 @@ export default function Home() {
                   loading="eager"
                   decoding="async"
                 />
-              </button>
+              </a>
 
               <a
                 href={AMAZON_APPSTORE_URL}
@@ -294,52 +297,6 @@ export default function Home() {
       <HomeAboutResearchObs />
       <HomePipeline />
       <HomeFAQ />
-
-      {showBetaModal ? (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/60 px-6 backdrop-blur-sm"
-          role="dialog"
-          aria-modal="true"
-          aria-labelledby="google-play-beta-title"
-          onClick={() => setShowBetaModal(false)}
-        >
-          <div
-            className="w-full max-w-md rounded-4xl border border-[#d8d2c2] bg-[#fffdf8] p-6 text-center shadow-[0_28px_90px_rgba(7,27,29,0.30)]"
-            onClick={(event) => event.stopPropagation()}
-          >
-            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#5f7659]">
-              Google Play
-            </p>
-
-            <h2
-              id="google-play-beta-title"
-              className="mt-3 text-3xl font-black tracking-tight text-[#071b1d]"
-            >
-              Closed beta testing
-            </h2>
-
-            <p className="mt-4 text-base leading-7 text-[#24362f]">
-              ResearchObs is currently in closed beta testing on Google Play.
-              Please email{" "}
-              <a
-                href="mailto:researchobsapp@gmail.com"
-                className="font-bold text-[#5f7659] underline decoration-[#5f7659]/40 underline-offset-4"
-              >
-                researchobsapp@gmail.com
-              </a>{" "}
-              to join the testing group!
-            </p>
-
-            <button
-              type="button"
-              onClick={() => setShowBetaModal(false)}
-              className="mt-6 inline-flex rounded-full bg-[#5f7659] px-6 py-3 text-sm font-bold text-white transition hover:bg-[#4f6649]"
-            >
-              Close
-            </button>
-          </div>
-        </div>
-      ) : null}
     </>
   );
 }

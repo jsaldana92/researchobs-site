@@ -2,7 +2,7 @@
 
 export default function FeaturesHeroSection() {
   return (
-    <section className="scroll-mt-24 bg-linear-to-br from-[#071b1d] via-[#102820] to-[#3f5138] px-6 pt-32 text-white sm:pt-42 sm:pb-28">
+    <section className="scroll-mt-24 bg-linear-to-br from-[#071b1d] via-[#102820] to-[#3f5138] px-6 pt-32 pb-20 text-white sm:pt-42 sm:pb-28">
       <div className="mx-auto flex max-w-5xl flex-col items-center text-center">
         <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#b8c9b4]">
           Features
