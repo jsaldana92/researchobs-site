@@ -30,7 +30,7 @@ const pipelineItems = [
 export default function HomePipeline() {
   return (
     <section className="scroll-mt-24 bg-white px-6 py-20 text-[#071b1d] sm:py-24">
-      <div className="mx-auto max-w-[92rem]">
+      <div className="mx-auto max-w-368">
         <div className="mx-auto max-w-5xl text-center">
           <h2 className="text-4xl font-black tracking-tight text-[#071b1d] sm:text-5xl lg:text-6xl">
             Start tracking behaviors by collecting data

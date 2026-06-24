@@ -11,10 +11,10 @@ import React, {
 } from "react";
 import gsap from "gsap";
 
-import storageImage from "../assets/core-features/storage.png";
-import mainPageImage from "../assets/core-features/main-page.png";
-import groupScanImage from "../assets/core-features/group-scan.png";
-import reportsImage from "../assets/core-features/reports.png";
+import storageImage from "../assets/core-features/core-storage.webp";
+import mainPageImage from "../assets/core-features/core-home.webp";
+import groupScanImage from "../assets/core-features/core-obs.webp";
+import reportsImage from "../assets/core-features/core-reports.webp";
 
 const FEATURES = [
   {
@@ -63,7 +63,7 @@ export const Card = forwardRef(({ customClass, ...rest }, ref) => (
   <div
     ref={ref}
     {...rest}
-    className={`pointer-events-none absolute top-1/2 left-1/2 overflow-hidden rounded-[1.15rem] bg-[#111614] p-3 shadow-[0_24px_70px_rgba(0,0,0,0.34),inset_0_2px_0_rgba(255,255,255,0.14),inset_0_-10px_22px_rgba(0,0,0,0.38)] transform-3d will-change-transformbbackface-hidden{
+    className={`pointer-events-none absolute top-1/2 left-1/2 overflow-visible bg-transparent p-0 transform-3d will-change-transform backface-hidden ${
       customClass ?? ""
     } ${rest.className ?? ""}`.trim()}
   />
@@ -320,21 +320,19 @@ function CardSwap({
 
 function FeatureCardContent({ feature }) {
   return (
-    <div className="relative h-full w-full overflow-hidden rounded-xl bg-slate-950">
+    <div className="relative h-full w-full overflow-visible bg-transparent">
       {feature.imageSrc ? (
         <img
           src={feature.imageSrc}
           alt={`${feature.screenTitle} screenshot`}
-          width="1200"
-          height="1815"
           loading={feature.id === "group-focal" ? "eager" : "lazy"}
           decoding="async"
           fetchPriority={feature.id === "group-focal" ? "high" : "auto"}
-          className="absolute inset-0 h-full w-full object-cover object-top"
+          className="h-full w-full object-contain object-center drop-shadow-[0_28px_60px_rgba(7,27,29,0.28)]"
         />
       ) : (
         <div
-          className={`absolute inset-0 h-full w-full bg-linear-to-br ${feature.accentClass}`}
+          className={`h-full w-full rounded-xl bg-linear-to-br ${feature.accentClass}`}
         >
           <div className="flex h-full w-full flex-col bg-slate-950/18 p-6">
             <p className="text-xs font-semibold uppercase tracking-[0.28em] text-slate-100/80">
@@ -360,8 +358,6 @@ function FeatureCardContent({ feature }) {
           </div>
         </div>
       )}
-
-      <div className="pointer-events-none absolute inset-0 rounded-xl shadow-[inset_0_0_0_1px_rgba(255,255,255,0.16),inset_0_16px_24px_rgba(255,255,255,0.06),inset_0_-18px_28px_rgba(0,0,0,0.24)]" />
     </div>
   );
 }
@@ -403,7 +399,7 @@ export default function CoreFeaturesSection() {
   }, []);
 
   return (
-    <section className="overflow-hidden bg-linear-to-br from-[#b7c8ba] via-[#e8ece5] to-[#f6f2e8] px-6 pt-10 pb-0 text-slate-900 m:pt-10 sm:pt-10">
+    <section className="overflow-hidden bg-linear-to-br from-[#b7c8ba] via-[#e8ece5] to-[#f6f2e8] px-6 pt-10 pb-60 text-slate-900 sm:pt-10 md:pb-0 sm:pb-60">
       <div className="mx-auto grid max-w-6xl gap-3 sm:gap-18 lg:grid-cols-2 lg:items-center lg:gap-10">
         <div className="relative z-20 flex flex-col justify-center pb-4 lg:pb-20">
           <p className="text-xs font-semibold uppercase tracking-[0.28em] text-emerald-950/65">

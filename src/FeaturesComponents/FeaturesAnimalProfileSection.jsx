@@ -207,7 +207,7 @@ function AccordionShowcase({ tabs, defaultId }) {
             }}
             className={`group relative min-w-0 overflow-hidden border-y border-r border-white/35 text-left transition-[background-color,border-color,color] duration-300 ease-out first:border-l focus:outline-none focus-visible:ring-2 focus-visible:ring-[#E7ECE7]/80 ${
               active
-                ? "flex-[1_1_0%] bg-[#F8F7F3] text-slate-950 max-[560px]:min-h-120 max-[560px]:flex-none"
+                ? "flex flex-[1_1_0%] items-start bg-[#F8F7F3] text-slate-950 max-[560px]:min-h-120 max-[560px]:flex-none"
                 : "flex flex-[0_0_3.5rem] items-center justify-center bg-[#E7ECE7]/95 text-[#29423B] hover:bg-[#F8F7F3] max-[560px]:h-14 max-[560px]:w-full max-[560px]:flex-none max-[560px]:justify-start max-[560px]:px-5"
             }`}
           >
@@ -239,7 +239,7 @@ function AccordionShowcase({ tabs, defaultId }) {
                     ease: "easeOut",
                     delay: 0.08,
                   }}
-                  className="relative z-10 flex h-full min-w-0 flex-col p-6 sm:p-8"
+                  className="relative z-10 flex h-full w-full min-w-0 flex-col justify-start p-6 sm:p-8"
                 >
                   <h3
                     className={`max-w-2xl text-3xl font-black tracking-tight sm:text-4xl ${
@@ -310,12 +310,6 @@ export default function FeaturesAnimalProfileSection() {
           <h2 className="mt-4 text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-6xl">
             Build custom species and ethogram systems
           </h2>
-
-          <p className="mx-auto mt-5 max-w-4xl text-base leading-7 text-white/74 sm:text-lg">
-            ResearchObs profiles organize the animals you observe and the data
-            fields your protocol needs, so each species can have its own groups,
-            members, behaviors, variables, and observation context.
-          </p>
         </div>
 
         <div className="mt-16 grid gap-8 lg:grid-cols-[0.68fr_1.32fr] lg:items-center">

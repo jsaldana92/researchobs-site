@@ -1,7 +1,7 @@
 // src/pages/TermsOfUse.jsx
 
 const intro =
-  "These Terms govern your access to and use of ResearchObs. By downloading, accessing, or using the app, you agree to these Terms. You can access these Terms at any time in the app or at https://www.researchobs.com/#/terms-conditions.";
+  "These Terms govern your access to and use of ResearchObs. By downloading, accessing, or using the app, you agree to these Terms. You can access these Terms at any time in the app or at https://www.researchobs.org/terms-conditions.";
 
 const sections = [
   {
@@ -86,7 +86,7 @@ const sections = [
   },
   {
     title: "21. Termination",
-    body: "ResearchObs may suspend, restrict, or terminate your access to the app or specific features if you violate these Terms, misuse the app, create risk, violate applicable law, interfere with app operations, or engage in behavior that harms ResearchObs, other users, third-party services, people, animals, organizations, institutions, systems, or data. You may stop using the app at any time. You may request that your ResearchObs account and ResearchObs-controlled data be deleted at https://www.researchobs.com/#/delete-account.",
+    body: "ResearchObs may suspend, restrict, or terminate your access to the app or specific features if you violate these Terms, misuse the app, create risk, violate applicable law, interfere with app operations, or engage in behavior that harms ResearchObs, other users, third-party services, people, animals, organizations, institutions, systems, or data. You may stop using the app at any time. You may request that your ResearchObs account and ResearchObs-controlled data be deleted at https://www.researchobs.org/delete-account.",
   },
   {
     title: "22. Governing Law",

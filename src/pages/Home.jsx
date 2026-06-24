@@ -3,6 +3,14 @@ import AppLogo from "../components/AppLogo";
 import HomeAboutResearchObs from "../HomeComponents/HomeAboutResearchObs";
 import HomePipeline from "../HomeComponents/HomePipeline";
 import HomeFAQ from "../HomeComponents/HomeFAQ";
+import googlePlayBadge from "../assets/app_store/google-play-badge.svg";
+import amazonAppstoreBadge from "../assets/app_store/amazon-appstore-badge.svg";
+
+const AMAZON_APPSTORE_URL =
+  "https://www.amazon.com/ResearchObs/dp/B0H2XWMKH8/ref=sr_1_1?crid=J16WHGEZIFIZ&dib=eyJ2IjoiMSJ9.5zlvG0GddLW_bBTx2j92Lw.AwXdZ-uBmd8MLGCsFuMKNCMmZNdIuOl2VOwYP0KopCU&dib_tag=se&keywords=research+obs&qid=1781242516&s=mobile-apps&sprefix=researchobs%2Cmobile-apps%2C164&sr=1-1";
+
+const GOOGLE_PLAY_STORE_URL =
+  "https://play.google.com/store/apps/details?id=com.researchobs.app";
 
 const DISPLAY_MS = 8000;
 const FADE_MS = 1800;
@@ -121,55 +129,11 @@ function HeroImage({ slide, className = "", priority = false }) {
   );
 }
 
-function StoreLinksPlaceholder() {
-  return (
-    <section
-      id="get-started"
-      className="scroll-mt-24 bg-[#08110c] px-6 py-16 text-slate-100"
-    >
-      <div className="mx-auto max-w-6xl">
-        <div className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm">
-          <p className="text-sm font-semibold uppercase tracking-[0.25em] text-emerald-300/80">
-            Get started
-          </p>
-
-          <h2 className="mt-4 text-3xl font-black tracking-tight sm:text-4xl">
-            Download ResearchObs
-          </h2>
-
-          <p className="mt-4 max-w-3xl text-base leading-7 text-slate-300 sm:text-lg">
-            This is the placeholder area for your store links. Later, this can
-            hold your Google Play download and your Amazon Appstore link for
-            Fire tablets.
-          </p>
-
-          <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-            <button
-              type="button"
-              className="inline-flex items-center justify-center rounded-2xl border border-white/10 bg-white/5 px-6 py-4 text-sm font-semibold text-white opacity-80"
-            >
-              Google Play Store
-            </button>
-
-            <button
-              type="button"
-              className="inline-flex items-center justify-center rounded-2xl border border-white/10 bg-white/5 px-6 py-4 text-sm font-semibold text-white opacity-80"
-            >
-              Amazon Appstore
-            </button>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
 export default function Home() {
   const slides = useMemo(() => buildSlides(), []);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [incomingIndex, setIncomingIndex] = useState(null);
   const [incomingVisible, setIncomingVisible] = useState(false);
-
   useEffect(() => {
     if (slides.length <= 1 || incomingIndex !== null) return undefined;
 
@@ -252,12 +216,6 @@ export default function Home() {
   const incomingSlide =
     incomingIndex !== null ? (slides[incomingIndex] ?? null) : null;
 
-  const handleStartCollectingClick = () => {
-    document
-      .getElementById("get-started")
-      ?.scrollIntoView({ behavior: "smooth", block: "start" });
-  };
-
   return (
     <>
       <section className="relative flex min-h-[clamp(34rem,70vw,52rem)] items-center justify-center overflow-hidden px-6 pt-24 text-center">
@@ -294,20 +252,51 @@ export default function Home() {
             monitoring.
           </p>
 
-          <button
-            type="button"
-            onClick={handleStartCollectingClick}
-            className="mt-6 inline-flex items-center rounded-full border border-emerald-300/40 bg-emerald-400/15 px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-white transition hover:bg-emerald-400/25"
-          >
-            Start Collecting Data Now!
-          </button>
+          <div className="mt-7 rounded-3xl border border-white/15 bg-black/28 px-5 py-4 shadow-[0_18px_60px_rgba(0,0,0,0.24)] backdrop-blur-md">
+            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-slate-100/90">
+              Start collecting data now!
+            </p>
+
+            <div className="mt-4 flex flex-col items-center justify-center gap-3 sm:flex-row">
+              <a
+                href={GOOGLE_PLAY_STORE_URL}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Get ResearchObs on Google Play"
+                className="transition duration-300 hover:-translate-y-0.5 hover:opacity-90"
+              >
+                <img
+                  src={googlePlayBadge}
+                  alt="Get it on Google Play"
+                  className="h-12 w-auto sm:h-14"
+                  loading="eager"
+                  decoding="async"
+                />
+              </a>
+
+              <a
+                href={AMAZON_APPSTORE_URL}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Get ResearchObs on Amazon Appstore"
+                className="transition duration-300 hover:-translate-y-0.5 hover:opacity-90"
+              >
+                <img
+                  src={amazonAppstoreBadge}
+                  alt="Available at Amazon Appstore"
+                  className="h-12 w-auto sm:h-14"
+                  loading="eager"
+                  decoding="async"
+                />
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 
       <HomeAboutResearchObs />
       <HomePipeline />
       <HomeFAQ />
-      <StoreLinksPlaceholder />
     </>
   );
 }
